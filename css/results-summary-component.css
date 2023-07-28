@@ -9,7 +9,6 @@
     align-items: center;
     text-align: center;
     font-family: HankenGrotesk;
-    font-size: 18px;
 }
 
 .results-summary-component h1 {
@@ -25,7 +24,7 @@
 .results-summary-component .result {
     display: flex;
     flex-direction: column;
-    background: hsl(241, 81%, 54%);
+    background: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
     width: 100%;
     color: hsl(0, 0%, 70%);
     padding: 24px 0;
@@ -41,7 +40,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    font-size: 1em;
 }
 
 .results-summary-component #grade {
@@ -66,7 +64,7 @@
     box-sizing: border-box;
     padding: 5% 10%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex: 1;
     flex-direction: column;
 }
@@ -77,11 +75,9 @@
     font-size: 1.2em;
 }
 .results-summary-component .summary ul {
-    display: flex;
-    overflow: auto;
-    flex-direction: column;
+    overflow-y: auto;
     list-style-type: none;
-    justify-content: space-between;
+    flex: 1;
     margin: 0;
     padding: 0;
 }
@@ -91,23 +87,23 @@
     flex-direction: row;
     align-items: center;
     background-color: hsla(224, 30%, 27%, 10%);
-    font-size: .9em;
+    font-size: 1.25em;
     font-weight: 700;
     padding: 5%;
-    margin: 10px 0;
+    margin: 15px 0;
     border-radius: 8px;
 }
 
-.results-summary-component .summary .subject-list li .subject-grade {
+.results-summary-component .summary #subject-list li .subject-grade {
     margin-left: auto;
     color: hsla(224, 30%, 27%, 50%);
 }
 
-.results-summary-component .summary .subject-list li .subject-icon {
+.results-summary-component .summary #subject-list li .subject-icon {
     margin-right: 2%
 }
 
-.results-summary-component .summary .subject-list li .subject-grade span {
+.results-summary-component .summary #subject-list li .subject-grade span {
     color: hsl(224, 30%, 27%);
 }
 
@@ -121,15 +117,18 @@
     color: white;
     background-color: hsl(224, 30%, 27%);
     font-family: HankenGrotesk;
-    font-weight: 700;
+    margin: 10% 0 10% 0;
     padding: 5%;
-    margin-top: 5%
+}
+
+.results-summary-component .summary button:hover {
+    background: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+    cursor: pointer;
 }
 
 @media screen and (min-width: 768px) {
     .results-summary-component {
         flex-direction: row;
-        font-size: 16px;
         box-shadow: hsl(221, 100%, 96%) 10px 20px 30px;
         border-radius: 32px;
         height: 50%;
@@ -139,7 +138,6 @@
         height: 100%;
         box-sizing: border-box;
         border-radius: 10%;
-        overflow-y: auto;
     }
 
     .results-summary-component .result .gradebox {
@@ -147,15 +145,11 @@
     }
 
     .results-summary-component .summary {
-        padding: 10% 5%;
+        padding: 3%;
+        height: 100%;
     }
 
-    .results-summary-component .summary .subject-list li {
-        margin: 5px 0;
-    }
-    
-    .results-summary-component .summary button {
-        margin-top: 15%;
-        padding: 10%;
+    .results-summary-component .summary ul li {
+        margin: 10px 0;
     }
 }
