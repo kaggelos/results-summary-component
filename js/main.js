@@ -16,9 +16,7 @@ async function populateList(url) {
         "Good",
         "Great"
     ];
-    for (let i = 0; grade > (100/titles.length)*i; i++) {
-        document.getElementById('title').innerHTML = titles[i];
-    }
+    document.getElementById('title').innerHTML = titles[Math.floor(grade/(100/titles.length))];
   });
 };
 
